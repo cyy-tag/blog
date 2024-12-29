@@ -17,6 +17,7 @@
     "vuepress": "^2.0.0-beta.67"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "pnpm": "^8.7.5"
   },
   "pnpm": {

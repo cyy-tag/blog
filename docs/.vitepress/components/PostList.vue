@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 // @ts-ignore
 import { data as posts } from '../utils/posts.data.ts'
 </script>
@@ -16,19 +17,31 @@ import { data as posts } from '../utils/posts.data.ts'
 </template>
 
 <style scoped>
+
+.description {
+  width: 600px;
+  word-wrap: break-word;
+  white-space: normal; /*保留换行和空格 */
+}
+
 /* 去掉有序列表和无序列表的默认样式 */
 .post_list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-right: 300px;
+}
+
+li {
+  flex: 0 1 auto;
+  margin: 5px;
 }
 
 #test {
   width: 600px;
   height: 2px;
   /* background: linear-gradient(to left, #fff 10%, gainsboro 80%, #fff 85%); */
-  background-color: gray;
+  background-color: rgb(83, 78, 78);
   margin: auto;
 }
 

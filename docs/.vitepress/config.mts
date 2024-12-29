@@ -7,9 +7,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: nav(),
     sidebar: {
-      '/posts/': {base: '/posts/', items: sidebarGuide() }
+      '/posts/': {
+        base: '/posts/',
+        items: sidebarGuide()
+      },
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cyy-tag/blog' }
     ]
@@ -35,7 +37,7 @@ function  sidebarGuide(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: '算法',
-      collapsed: true,
+      collapsed: true, //初始状态为折叠按钮
       items: [
         {text: '字符串哈希', link: '/algorithm/string-hash'},
         {text: 'api-example', link: '/algorithm/api-examples'}
