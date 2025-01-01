@@ -54,44 +54,11 @@ jobs:
         with:
           node-version: '19.6.0'
 
-      # 使用 最新的 PNPM
-      # 你也可以指定为具体的版本
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
+      - run: npm i pnpm -g
+      - run: pnpm install --frozen-lockfile
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          version: latest
-          # version: 9
-          run_install: false
-
-        # 安装依赖
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-        # 构建项目
-      - name: Build blog project
-        run: |
-          echo ${{ github.workspace }}
-          pnpm build
-
-        # 资源拷贝
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs/.vitepress/dist
-          destination: ./_site
-
-        # 上传 _site 的资源，用于后续部署
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
-  # 部署任务
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
