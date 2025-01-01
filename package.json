@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "virepress build docs",
+    "build": "vitepress build docs",
     "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
