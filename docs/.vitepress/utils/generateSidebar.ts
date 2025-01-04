@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 
 export function generateSidebar(dir: string): DefaultTheme.SidebarItem[] {
-  console.log(process.cwd())
   const sidebar: DefaultTheme.SidebarItem[] = [];
   const files = fs.readdirSync(dir, { withFileTypes: true });
 

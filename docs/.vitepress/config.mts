@@ -2,7 +2,7 @@ import { defineConfig, type DefaultTheme } from 'vitepress'
 import footnote from 'markdown-it-footnote';
 import { generateSidebar } from './utils/generateSidebar'
 
-const base = "";
+const base = "/blog/";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
