@@ -1,7 +1,8 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import footnote from 'markdown-it-footnote';
+import { generateSidebar } from './utils/generateSidebar'
 
-const base = "/blog/";
+const base = "";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,7 +13,6 @@ export default defineConfig({
     nav: nav(),
     sidebar: {
       '/posts/': {
-        base: '/posts/',
         items: sidebarGuide()
       },
     },
@@ -36,7 +36,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "Posts",
-      link: '/posts'
+      link: '/posts/'
     },
   ]
 }
@@ -45,13 +45,10 @@ function nav(): DefaultTheme.NavItem[] {
 function  sidebarGuide(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: '算法',
+      text: 'C++',
       collapsed: true, //初始状态为折叠按钮
-      items: [
-        {text: '字符串哈希', link: '/algorithm/string-hash'},
-        {text: 'api-example', link: '/algorithm/api-examples'}
-      ]
-    }
+      items: generateSidebar('./docs/posts/C++')
+    },
   ]
 }
 
