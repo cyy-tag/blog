@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
+    "markdown-it-footnote": "^4.0.0",
     "pnpm": "^8.7.5"
   },
   "pnpm": {

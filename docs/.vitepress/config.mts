@@ -1,4 +1,5 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
+import footnote from 'markdown-it-footnote';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,6 +17,11 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cyy-tag/blog' }
     ]
+  },
+  markdown: {
+    config: (md) => {
+      md.use(footnote);
+    }
   }
 })
 
