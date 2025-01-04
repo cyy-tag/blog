@@ -1,10 +1,12 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import footnote from 'markdown-it-footnote';
 
+const base = "/blog/";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "CYY's Blog",
-  base: '/',
+  base: base,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: nav(),
@@ -52,3 +54,6 @@ function  sidebarGuide(): DefaultTheme.SidebarItem[] {
     }
   ]
 }
+
+//导出base属性
+export { base };
