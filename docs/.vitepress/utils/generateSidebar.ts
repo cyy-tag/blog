@@ -19,6 +19,5 @@ export function generateSidebar(dir: string): DefaultTheme.SidebarItem[] {
       });
     }
   });
-  console.log(sidebar)
   return sidebar;
 }
