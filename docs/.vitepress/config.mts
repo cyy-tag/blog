@@ -13,6 +13,7 @@ const customElements = [
 ]
 
 const base = "/blog/";
+// const base = "";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -78,7 +79,13 @@ function  sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: "数据结构与算法",
       collapsed: true,
       items: generateSidebar('./docs/posts/datastruct & algorithm')
+    },
+    {
+      text: "redis",
+      collapsed: true,
+      items: generateSidebar('./docs/posts/redis')
     }
+
   ]
 }
 

@@ -54,7 +54,7 @@ struct dict {
 
 ### Dict内存布局
 
-<img src="F:\博客文章\redis_dict内存布局.drawio.svg">
+<img src="../../public/redis/redis_dict内存布局.drawio.svg">
 
 redis中h_table[0]是一个dictEntry(键值对)指针数组，为什么不设计成图2为一个dictEntry的索引位置，指向dictEntry数组的位置，从内存布局上看，图2 dictEntry数组相比较redis指针数组有更优内存连续性，在遍历所有元素的时候直接遍历dictEntry数组。笔者认为redis怎么设计的原因是为兼容复杂的使用场景，如redis Dict设置了no_value属性时，Dict可以当作集合类型，又或是value优化存储在key中的情况。单单使用图2的形式已经不能满足上述的要求。
 
