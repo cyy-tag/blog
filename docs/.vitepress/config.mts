@@ -84,6 +84,11 @@ function  sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: "redis",
       collapsed: true,
       items: generateSidebar('./docs/posts/redis')
+    },
+    {
+      text: "工具使用",
+      collapsed: true,
+      items: generateSidebar('./docs/posts/tool')
     }
 
   ]
